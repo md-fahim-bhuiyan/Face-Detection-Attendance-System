@@ -9,17 +9,9 @@ def Recognizer(details):
 
 	known_face_encodings = []
 	known_face_names = []
-
-	# base_dir = os.path.dirname(os.path.abspath(__file__))
-	# image_dir = os.path.join(base_dir, "static")
-	# image_dir = os.path.join(image_dir, "profile_pics")
-
-	# base_dir = os.getcwd()
 	base_dir = os.path.dirname(os.path.abspath(__file__))
-	# os.chdir("..")
 	base_dir = os.getcwd()
 	image_dir = os.path.join(base_dir,"{}\{}\{}\{}\{}\{}".format('static','images','Student_Images',details['branch'],details['year'],details['section']))
-	# print(image_dir)
 	names = []
 
 
@@ -76,8 +68,6 @@ def Recognizer(details):
 				left*=2
 
 				cv2.rectangle(frame, (left,top),(right,bottom), (0,0,255), 2)
-
-				# cv2.rectangle(frame, (left, bottom - 30), (right,bottom - 30), (0,255,0), -1)
 				font = cv2.FONT_HERSHEY_DUPLEX
 				cv2.putText(frame, 'Unknown', (left, top), font, 0.8, (255,255,255),1)
 		else:
@@ -88,8 +78,6 @@ def Recognizer(details):
 				left*=2
 
 				cv2.rectangle(frame, (left,top),(right,bottom), (0,255,0), 2)
-
-				# cv2.rectangle(frame, (left, bottom - 30), (right,bottom - 30), (0,255,0), -1)
 				font = cv2.FONT_HERSHEY_DUPLEX
 				cv2.putText(frame, name, (left, top), font, 0.8, (255,255,255),1)
 

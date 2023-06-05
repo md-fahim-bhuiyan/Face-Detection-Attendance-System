@@ -10,7 +10,7 @@ from .forms import *
 from .models import Student, Attendence
 from .filters import AttendenceFilter
 
-# from django.views.decorators import gzip
+
 
 from .recognizer import Recognizer
 from datetime import date
