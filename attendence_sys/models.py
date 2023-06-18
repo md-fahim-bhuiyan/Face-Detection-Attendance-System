@@ -10,7 +10,6 @@ def user_directory_path(instance, filename):
     return 'Faculty_Images/{}'.format(filename)
 
 class Faculty(models.Model):
-
     user = models.OneToOneField(User, null = True, blank = True, on_delete= models.CASCADE)
     firstname = models.CharField(max_length=200, null=True, blank=True)
     lastname = models.CharField(max_length=200, null=True, blank=True)
