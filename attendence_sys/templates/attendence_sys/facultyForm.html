@@ -1,10 +1,10 @@
-{%  extends 'attendence_sys/main.html' %}
+{% extends 'attendence_sys/main.html' %}
 {% block content %}
 
 <style>
-	.profile-pic{
+	.profile-pic {
 		max-width: 200px;
-		max-height:200px;
+		max-height: 200px;
 		margin: 0 auto;
 		border-radius: 50%;
 	}
@@ -18,18 +18,18 @@
 			<hr>
 			<h3 style="text-align: center">Faculty Profile Pic</h3>
 			<hr>
-			<img class="img-responsive profile-pic" src="{{request.user.faculty.profile_pic.url}}" >
-		
+			<img class="img-responsive profile-pic" src="{{request.user.faculty.profile_pic.url}}">
+
 		</div>
 	</div>
 	<div class="col-md-9">
 		<div class="card card-body">
-			
+
 			<form method="POST" action="" enctype="multipart/form-data">
 				{% csrf_token %}
 				{{form.as_p}}
-		
-			<input class="btn btn-primary" type="submit" name="Update Information">
+
+				<input class="btn btn-primary" type="submit" name="Update Information">
 			</form>
 		</div>
 	</div>

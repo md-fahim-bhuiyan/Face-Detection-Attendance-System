@@ -3,20 +3,22 @@
 {% block content %}
 <div class="container">
     {% for message in messages %}
-        {% if message.tags == 'error' %}
-            <div class="alert alert-danger">
-                {{ message }}
-            </div>
-        {% else %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endif %}
+    {% if message.tags == 'error' %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+    {% else %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endif %}
     {% endfor %}
     <div class="row">
         <div class="col-md-6" style="margin-top: 20px;">
             <div class="card card-body">
-                <center><h3>Take Attendence</h3></center>
+                <center>
+                    <h3>Take Attendence</h3>
+                </center>
                 <form class="form-horizontal" action="{% url 'attendence' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
@@ -24,7 +26,7 @@
                         <select name='branch' class="form-control" id="sel1">
                             <option value="SWE">SWE</option>
                             <option value="CSE">CSE</option>
-                           
+
                             <option value="ITM">ITM</option>
                             <option value="EEE">EEE</option>
                             <option value="CIS">CIS</option>
@@ -66,7 +68,9 @@
         </div>
         <div class="col-md-6" style="margin-top: 20px;">
             <div class="card card-body">
-                <center><h3>Add Student</h3></center>
+                <center>
+                    <h3>Add Student</h3>
+                </center>
                 <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row">
@@ -121,17 +125,19 @@
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-                    <button type="submit" class="btn btn-block btn-info">Submit</button>    
+                    <button type="submit" class="btn btn-block btn-info">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 
     <div class="row">
-        
+
         <div class="col-md-6" style="margin-top: 20px;">
             <div class="card card-body">
-                <center><h3>Update Student Details</h3></center>
+                <center>
+                    <h3>Update Student Details</h3>
+                </center>
                 <form class="form-horizontal" action="{% url 'updateStudentRedirect' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
@@ -143,7 +149,7 @@
                         <select name='branch' class="form-control" id="sel1">
                             <option value="SWE">SWE</option>
                             <option value="CSE">CSE</option>
-                            
+
                             <option value="ITM">ITM</option>
                             <option value="EEE">EEE</option>
                             <option value="CIS">CIS</option>
@@ -156,8 +162,10 @@
         </div>
         <div class="col-md-6" style="margin-top: 20px;;">
             <div class="card card-body">
-                <center><h3>Search Attendence</h3></center>
-                    <a href="{% url 'searchattendence' %}" class="btn btn-block btn-info">Click Here</a>
+                <center>
+                    <h3>Search Attendence</h3>
+                </center>
+                <a href="{% url 'searchattendence' %}" class="btn btn-block btn-info">Click Here</a>
             </div>
         </div>
     </div>
